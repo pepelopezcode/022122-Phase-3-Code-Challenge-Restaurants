@@ -15,7 +15,7 @@ class Customer < ActiveRecord::Base
     end
 
     def delete_reviews(restaurant)
-        self.restaurants.destroy(restaurant)
+        self.reviews.where(restaurant_id: restaurant).destroy_all
     end
 
-end
+end 
